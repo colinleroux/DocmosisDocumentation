@@ -33,3 +33,21 @@ When creating a variable inside of a repeating section, it will only exist withi
 
 
 ```
+[See the template guide for more...](https://resources.docmosis.com/Documentation/Cloud/DWS4/Cloud-Template-Guide-DWS4.pdf)
+
+### <<$top>> or <<$root>>
+
+The root of the data regardless of the current position or
+context in the template.
+
+### <<$this>> or <<$current>>
+
+The current source of data in the current position in the
+template. This allows for anonymous data lookups from
+arrays or collections such as <<$current[0]>>.
+
+### <<$parent>>
+
+The parent or container of data in the current context of the
+template. Allows data lookup in the current “hotel” when
+the current context is a “floor” for example.
