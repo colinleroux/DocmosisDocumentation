@@ -2,9 +2,9 @@
 
 <div class="grid cards" markdown>
 
-- :fontawesome-brands-html5: __Basics__ Python Basics
-- :fontawesome-brands-js: __JavaScript__ for interactivity
-- :fontawesome-brands-css3: __CSS__ for text running out of boxes
-- :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
-xx
+- :simple-openlayers: __Basics__ Docmosis Basics
+- :octicons-note-24: __Notes__ for simple reference
+- :fontawesome-brands-fort-awesome: __TemplateStuff__
+- :material-card-bulleted-settings-outline: __Usefull Config settings__ ... 
+
 </div>
