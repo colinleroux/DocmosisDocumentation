@@ -7,6 +7,33 @@ Create a new or amend current docker file on host. To run ...
 
 ---
 
+Use docker-compose
+create a Dockerfile and add to directory - then:
+
+create a docker-compose.yaml
+```
+version: '3.3'
+
+services:
+  tornado:
+    build:
+      context: /home/colin/
+    ports:
+      - "8080:8080"
+    volumes:
+      - /home/colin/docmosisTemplates:/home/docmosis/templates
+    environment:
+      DOCMOSIS_KEY: "XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      DOCMOSIS_SITE: "Free Trial Tornado"
+      DOCMOSIS_ADMINPW: "password"
+
+```
+then  :
+
+`$sudo docker-compose up --build`
+
+---
+
 ### 1. **Check Docker Version and Info**
 - **Version**: Check the Docker version installed:
   ```bash
