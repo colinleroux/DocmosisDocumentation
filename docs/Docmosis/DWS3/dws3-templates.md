@@ -1,2 +1,0 @@
-# DWS3 - Templates
-
