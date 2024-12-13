@@ -21,3 +21,8 @@ Similarly modifying the Dockerfile achieves the same outcome:
 
 `ENV DOCMOSIS_CUSTOMSETTINGS=docmosis.external.resources.whitelist=https://quickchart.io/`
 
+## Foreign Characters 
+
+Adding the following to the dockerfile fixes the problem:
+
+`ENV LANG=C.UTF-8`
