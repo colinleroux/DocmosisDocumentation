@@ -95,3 +95,40 @@ Use a simple template with PlaceHolder image - bookmark name -imgfit_putChartHer
   "myVal": "1,234,567.89",
   "myDate": "27012024"
 }
+```
+
+## More Dates
+```json
+{
+"myDate": "2024-09-16T18:11:00"
+}
+
+###Examples
+
+If the Input Format is ISO 8601 (yyyy-MM-dd'T'HH:mm:ss)
+For input like 2024-09-16T18:11:00Z:
+<<{dateFormat(myDate, 'M/d/yy, h:mm a', ‘yyyy-MM-dd'T'HH:mm:ss’)}>> 
+If the Input Format is yyyy-MM-dd
+For input like 2024-09-16:
+
+<<{dateFormat('2024-09-16', 'M/d/yy', 'yyyy-MM-dd')}>> 
+To include the time, you’d need a combined input format, such as 2024-09-16 18:11 (assuming yyyy-MM-dd HH:mm):
+
+<<{dateFormat('2024-09-16 18:11', 'M/d/yy, h:mm a', 'yyyy-MM-dd HH:mm')}>> 
+If the Input Format is Milliseconds Since Epoch (<<$nowMS>>)
+To convert milliseconds since epoch to the desired format:
+
+<<{dateFormat($nowUTC, 'M/d/yy, h:mm a')}>> 
+If the Input is UTC (<<$nowUTC>>)
+For current UTC date and time:
+
+<<{dateFormat($nowUTC, 'M/d/yy, h:mm a', ‘yyyy-MM-dd'T'HH:mm:ssX’)}>> 
+Breaking Down the Output Format
+M → Month without leading zero (e.g., 9 for September)
+d → Day without leading zero (e.g., 16)
+yy → Two-digit year (e.g., 24 for 2024)
+h → Hour in 12-hour format (e.g., 6)
+mm → Minutes with leading zeros if necessary (e.g., 11)
+a → AM/PM marker (e.g., PM)
+
+```
