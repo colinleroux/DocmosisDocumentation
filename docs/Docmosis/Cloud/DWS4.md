@@ -132,3 +132,36 @@ mm → Minutes with leading zeros if necessary (e.g., 11)
 a → AM/PM marker (e.g., PM)
 
 ```
+
+## Barcodes
+
+<<barcode:barcode1:ABC123:code128>> specifies barcode1 to have a value of
+ABC123 and be of type code128.
+
+So ABC123 =default data to display if name (barcode1) returns null
+value
+Assuming that you wish to supply a value in your data that is used throughout the
+document - for every barcode in the document.
+
+{
+ "data" : "12345678"
+ }
+
+A suggested solution is to create your image bookmarks using variables (note: due to
+restrictions in MS Word
+we are unable to use the $ symbol in bookmarks, so we use _VAR in the name)
+
+For example name our barcode bookmarks : img_var_barcode1, img_var_barcode2 etc
+
+In our template we create variables which we populate with data  :
+
+<<$barcode1=data>>
+<<$barcode2=data>> ... etc
+
+We then call the barcode function with this data and fontsize, format etc
+
+<<barcode:$barcode1:code39:fontSize=2:ec=false>>
+
+we do this for every barcode bookmark.
+
+
