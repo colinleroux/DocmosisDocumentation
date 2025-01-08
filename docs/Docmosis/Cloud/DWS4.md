@@ -193,7 +193,7 @@ Filter data and show in table with headers if matched data found, don't print bl
 ```
 
 Template
-
+```
 <<$showheaders=false>>
 <<rs_list:filter(typeID=‘1’)>>
 <<$showheaders=true>>
@@ -208,3 +208,4 @@ TYPE	DESCRIPTION
 <<er_>>	
 
 end table
+```
