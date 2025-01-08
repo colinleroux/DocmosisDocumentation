@@ -168,4 +168,43 @@ We then call the barcode function with this data and fontsize, format etc
 
 we do this for every barcode bookmark.
 
+## Conditionals
 
+Filter data and show in table with headers if matched data found, don't print blank lines if nothing matches.
+
+```json
+{
+
+  "list": [
+    {
+      "typeID": "1",
+      "description": "value2"
+    },
+    {
+      "typeID": "2",
+      "description": "value4"
+    },
+    {
+      "typeID": "12",
+      "description": "value6"
+    }
+  ]
+}
+```
+
+Template
+
+<<$showheaders=false>>
+<<rs_list:filter(typeID=‘1’)>>
+<<$showheaders=true>>
+<<es_>>
+
+table
+<<cr_$showheaders>>	
+TYPE	DESCRIPTION
+<<er_>>	
+<<rr_list:filter(typeID=‘1’)>>	
+<<typeID>> 	<<description>>
+<<er_>>	
+
+end table
