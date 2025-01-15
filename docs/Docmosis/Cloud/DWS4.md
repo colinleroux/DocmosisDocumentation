@@ -209,3 +209,12 @@ TYPE	DESCRIPTION
 
 end table
 ```
+
+## Merge Fields
+
+The key combination of 
+`ALT + F9`
+ will toggle the hidden fields for you.
+
+Also `CTRL + A (select all)` followed by `F9` will update the display text for all merge fields and this will make the problem fields more obvious.
+
