@@ -26,3 +26,31 @@ Similarly modifying the Dockerfile achieves the same outcome:
 Adding the following to the dockerfile fixes the problem:
 
 `ENV LANG=C.UTF-8`
+
+** AZURE BLOB and Docker
+
+To configure Tornado to talk to Azure Blobs follow the information below.
+
+Create the Blob Store in Azure
+---------------------------
+1. create a Blob Store to hold Docmosis Templates
+2. upload templates to a folder in that store called "templates"
+3. upload images to a folder in that store called "images" (optional) if you want to have
+"stock images" uploaded
+
+The blob needs to have read permissions available to the Tornado instance. If Tornado is
+running within an azure instance this can be done via a Storage Data Blob Reader role,
+otherwise can be done via explicit azure credentials.
+
+Configure Tornado to use the Blob Store
+-----------------------------------
+1. configure Tornado "Source Templates From" as either:
+a. azureblob:<containerName>;<prefix>;<storageAccountName>
+- if Tornado is running on an azure instance with a role permitted to read from the blob
+store created above.
+OR
+b. azureblob:<containerName>;<prefix>;<storageAccountName>;<accessKey> - if Tornado is to
+be provided with credentials to reach the blob store from anywhere. The accessKey for the
+storage account will need to be provided.
+2. save the changes (if using the Tornado UI console)
+3. restart Tornado (the Java process running it).
