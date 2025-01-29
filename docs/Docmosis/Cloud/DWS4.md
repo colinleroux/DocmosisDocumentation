@@ -218,3 +218,24 @@ The key combination of
 
 Also `CTRL + A (select all)` followed by `F9` will update the display text for all merge fields and this will make the problem fields more obvious.
 
+## dateFormat and dateAdd
+
+<<$formattedDate = {dateFormat(decisionDateTime, ' d-MMM-yyyy', ‘yyyy-MM-dd'T'HH:mm:ss’)}>>
+<<$formattedDate>>
+
+With 60 days added: <<{dateAdd($formattedDate, 60, ‘day’)}>> 
+
+OneStep:
+<<$date01 = {dateAdd(decisionDateTime,60,’day’, 'd-MMM-yyyy' ,‘yyyy-MM-dd'T'HH:mm:ss’)}>>
+<<$date01>>
+
+Data :
+{
+  "decisionDateTime": "2021-05-25T14:47:03"
+}
+
+In Template
+
+<<$datePlus60 = {dateAdd(decisionDateTime,60,’day’, 'd-MMM-yyyy' ,‘yyyy-MM-dd'T'HH:mm:ss’)}>>
+
+After adding 60 Days <<$datePlus60>>
