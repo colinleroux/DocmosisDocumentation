@@ -219,7 +219,7 @@ The key combination of
 Also `CTRL + A (select all)` followed by `F9` will update the display text for all merge fields and this will make the problem fields more obvious.
 
 ## dateFormat and dateAdd
-
+```
 <<$formattedDate = {dateFormat(decisionDateTime, ' d-MMM-yyyy', ‘yyyy-MM-dd'T'HH:mm:ss’)}>>
 <<$formattedDate>>
 
@@ -239,3 +239,4 @@ In Template
 <<$datePlus60 = {dateAdd(decisionDateTime,60,’day’, 'd-MMM-yyyy' ,‘yyyy-MM-dd'T'HH:mm:ss’)}>>
 
 After adding 60 Days <<$datePlus60>>
+```
