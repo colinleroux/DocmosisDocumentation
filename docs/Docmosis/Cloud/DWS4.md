@@ -240,3 +240,23 @@ In Template
 
 After adding 60 Days <<$datePlus60>>
 ```
+
+### Checkboxes
+https://resources.docmosis.com/example-templates/generate-disclosure-form-from-template
+
+Use windings - word-insert-symbols ---
+
+```
+Happy	<<cs_isHappy>><<else>><<es_>> Yes	<<cs_isHappy>><<else>><<es_>> No
+On leave	<<cs_isOnLeave>><<else>><<es_>> Yes	<<cs_isOnLeave>><<else>><<es_>> No
+Ordered	<<cs_isOrdered>><<else>><<es_>> Yes	<<cs_isOrdered>><<else>><<es_>> No
+Backordered	<<cs_isBackordered>><<else>><<es_>> Yes	<<cs_isBackordered>><<else>><<es_>> No
+
+{
+  "isHappy": "true",
+  "isOnLeave": "true",
+  "isOrdered": "false",
+  "isBackordered": "true"
+}
+
+```
