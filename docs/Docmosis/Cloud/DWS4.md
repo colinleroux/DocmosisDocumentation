@@ -296,3 +296,32 @@ With rs loop
 To remove the numbers in a barcode add "fontSize=0" to the barcode field, eg:
 
 `<<barcode:barcode8:345457:code128:fontSize=0>>`
+
+## Sort Multiple Fields
+
+```
+I have a table of lineitems and I want to sort multiple fields what is the best way to do that?
+
+For example 
+
+Items: [{
+"SKU": "Test",
+"Qty":1
+"Metal": "copper",
+"Grams": 1
+}]
+
+and I want to sort it as metal (ascending) then grams (descending) then SKU (ascending) 
+
+```
+
+```
+<<rr_Items:sort(Metal):sort(DESC, Grams):sort(SKU)>>
+<<SKU>> <<Metal>>
+<<er_>>
+ 
+Or <<rs_....>> if not operating across table rows.
+ ```
+
+For more on sorting, please see 3.11.3 Sorting in Repeating Sections from page 73 of the Template Guide,
+
