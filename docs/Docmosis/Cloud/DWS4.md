@@ -289,6 +289,10 @@ With rs loop
 <<er_{ price != ’’ && discount != ’’ }>>
 <<es_entries>>
 
-
-
 ```
+
+## Remove numbers in a barcode
+
+To remove the numbers in a barcode add "fontSize=0" to the barcode field, eg:
+
+`<<barcode:barcode8:345457:code128:fontSize=0>>`
