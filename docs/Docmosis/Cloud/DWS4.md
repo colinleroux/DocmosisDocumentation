@@ -260,3 +260,35 @@ Backordered	<<cs_isBackordered>><<else>><<es_>> Yes	<<cs_isBackordered>>�
 }
 
 ```
+## Alternating Table Row Colors
+
+Docmosis has a feature for easily implementing alternating table row colors. If a cell of a row inside a set of repeating rows has a background color different to that of the corresponding cell of the starting row, then the background color for that cell will alternate between that of the starter row and its own background color.
+ 
+This can be disabled with the <<noTableRowAlternate>> field. If the field is placed anywhere in a table, the alternating color is disabled for the specific table. If the field is placed anywhere in the body text of the template, outside of any table, the all the following tables will have no alternating row colors.
+ 
+Uniformly coloring the whole table in the template would also prevent the row alternating.
+
+```
+With rr loop
+
+<<noTableRowAlternate>>
+<<rr_entries>>
+<<cr_{ price != ’’ && discount != ’’ }>>
+			<<price>>
+<<discount>>
+<<er_{ price != ’’ && discount != ’’ }>>
+<<er_entries>>
+
+
+With rs loop
+
+<<rs_entries>>
+<<cr_{ price != ’’ && discount != ’’ }>>
+			<<price>>
+<<discount>>
+<<er_{ price != ’’ && discount != ’’ }>>
+<<es_entries>>
+
+
+
+```
