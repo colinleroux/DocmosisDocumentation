@@ -12,3 +12,16 @@ It does not matter what styles or inline formatting are
 applied to the field, the style named "Body Text" will set the formatting
 of the output.
 
+Strip unwanted p tags 
+
+```
+<<$HelpText={replaceStr(HelpText,'<p>','')}>>
+<<$Stripped={replaceStr($HelpText,'</p>','')}>>
+<<$myindex={indexOf(‘$Stripped’, ‘<’)=-1}>>
+<<cs_{$myindex=’true’}>>
+<<$Stripped>>
+<<else>>
+<<html:HelpText>>
+<<es_>>
+
+```
