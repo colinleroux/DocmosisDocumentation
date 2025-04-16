@@ -1,1 +1,0 @@
-# DWS3 - General Notes
