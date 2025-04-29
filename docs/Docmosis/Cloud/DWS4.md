@@ -39,6 +39,10 @@ When creating a variable inside of a repeating section, it will only exist withi
 
 The root of the data regardless of the current position or
 context in the template.
+Use the dump command in a template to see the data available to the template :
+
+`<<dump:$top>>`
+
 
 #### <<$this>> or <<$current>>
 
