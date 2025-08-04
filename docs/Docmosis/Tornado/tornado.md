@@ -54,3 +54,7 @@ be provided with credentials to reach the blob store from anywhere. The accessKe
 storage account will need to be provided.
 2. save the changes (if using the Tornado UI console)
 3. restart Tornado (the Java process running it).
+
+## Libreoffice version
+
+` soffice --version`
